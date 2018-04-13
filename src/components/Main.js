@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 //get the json data of images
 var imagesData = require('../data/imagesData.json');
 
+var music = require("../sources/loving.m4a");
 /**
  * @imagesDataArray  {Array}
  * @return {Array}
@@ -305,6 +306,7 @@ class AppComponent extends React.Component {
 		this.Constant.vPosRange.topY[1] = halfStageH - halfImgH * 3;
 		//let the first pic at center
 		this.rearrange(0);
+		this.refs.audio.play()
 	}
 
 
@@ -331,6 +333,7 @@ class AppComponent extends React.Component {
 
 		return (
 			<section className="stage" ref="stage">
+			<audio src={music} loop={true} ref="audio"/>
 				<section className="img-sec">
 					{imgFigures}
 				</section>

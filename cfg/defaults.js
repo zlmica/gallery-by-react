@@ -40,7 +40,7 @@ function getDefaultModules() {
       test: /\.json$/,
       loader: 'json-loader'
     }, {
-      test: /\.(mp4|ogg|svg)$/,
+      test: /\.(m4a|mp4|ogg|svg)$/,
       loader: 'file-loader'
     }]
   };
