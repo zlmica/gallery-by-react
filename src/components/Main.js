@@ -227,6 +227,7 @@ class AppComponent extends React.Component {
 		// let pics in the left and right sec positioned
 		// now imgArrangeArr only has pics to be position in left and right sec
 		for (var i = 0, j = imgArrangeArr.length, k = j / 2; i < j; i++) {
+			
 			let hPosRangeLORX = null;
 
 			//first half pics at left
@@ -306,7 +307,6 @@ class AppComponent extends React.Component {
 		this.Constant.vPosRange.topY[1] = halfStageH - halfImgH * 3;
 		//let the first pic at center
 		this.rearrange(0);
-		this.refs.audio.play()
 	}
 
 
@@ -333,7 +333,9 @@ class AppComponent extends React.Component {
 
 		return (
 			<section className="stage" ref="stage">
-			<audio src={music} loop={true} ref="audio"/>
+			<audio loop={true} autoPlay>
+			<source src={music} />
+			</audio>
 				<section className="img-sec">
 					{imgFigures}
 				</section>
